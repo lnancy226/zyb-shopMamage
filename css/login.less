@@ -1,0 +1,124 @@
+// 引入全局配置
+@import "setting";
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.logo {
+  margin-top: 22px;
+}
+
+.main {
+  margin-top: 358px;
+  overflow: hidden;
+
+  .erweima {
+    float: left;
+    width: 264px;
+    p {
+      font-size: 25px;
+      color: #fff;
+      text-align: center;
+      margin-top: 30px;
+    }
+  }
+
+  .login {
+    float: right;
+    width: 450px;
+    height: 360px;
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 5px;
+    padding: 0 50px;
+
+    h2 {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 400;
+      margin: 30px 0 ;
+    }
+
+    input {
+      width: 350px;
+      height: 50px;
+      font-size: 16px;
+      margin-bottom: 40px;
+      padding-left: 20px;
+      border-radius: 5px;
+
+      &:nth-child(3) {
+        width: 190px;
+      }
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color: #bbb; opacity:1; 
+    }
+  
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: #bbb;opacity:1;
+    }
+    
+    input:-ms-input-placeholder{
+        color: #bbb;opacity:1;
+    }
+    
+    input::-webkit-input-placeholder{
+        color: #bbb;opacity:1;
+    }
+
+    button {
+      float: right;
+      width: 150px;
+      height: 50px;
+      border-radius: 5px;
+      background-color: #eb8212;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    p {
+      float: right;
+      color: #2b36c8;
+      font-size: 14px;
+      margin-top: -33px;
+    }
+
+    .submit {
+      display: block;
+      text-align: center;
+      width: 350px;
+      height: 50px;
+      line-height: 50px;
+      border-radius: 5px;
+      background-color: #b6322e;
+      color: #fff;
+      font-size: 22px;
+      // margin-left: 114px;
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 240px;
+  font-size: 12px;
+  color: #fff;
+
+  p {
+    margin-bottom: 8px;
+  }
+
+  a {
+    color: #fff;
+
+    &:hover {
+      color: #d04424;
+    }
+  }
+}
+
