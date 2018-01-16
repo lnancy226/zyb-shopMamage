@@ -20,13 +20,13 @@ $(document).ready(function() {
         core(num);
     }
 
-    timer = setInterval(autoPlay, 2000);
+    timer = setInterval(autoPlay, 3000);
     $("#box").mouseenter(function() {
         clearInterval(timer);
         $("#box>a").fadeIn();
     })
     $("#box").mouseleave(function() {
-        timer = setInterval(autoPlay, 2000);
+        timer = setInterval(autoPlay, 3000);
         $("#box>a").fadeOut();
     })
     $("#left").click(function() {

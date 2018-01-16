@@ -7,6 +7,7 @@ input,
 button,
 select,
 textarea {
+  border: none;
   outline: none;
 }
 a {
@@ -70,13 +71,19 @@ header a {
 .footer a:hover {
   color: #d04424;
 }
+.hide {
+  display: none;
+}
 #box {
+  width: 100%;
   height: 481px;
   position: relative;
+  overflow: hidden;
   /*要给一个导航小方块激活样式*/
 }
 #box ul {
   position: relative;
+  height: 100%;
 }
 #box ul li {
   position: absolute;
@@ -85,7 +92,9 @@ header a {
   display: none;
 }
 #box ul img {
-  width: 1003px;
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
 }
 #box ol#nav {
   position: absolute;
@@ -126,7 +135,8 @@ header a {
 #box a#right {
   right: 0;
 }
-.edit-shop {
+.edit-shop,
+.edit-shopInfo {
   width: 100%;
   background-color: #f6f6f6;
   font-size: 20px;
@@ -134,23 +144,30 @@ header a {
   padding: 20px 0;
   overflow: hidden;
 }
-.edit-shop .content {
+.edit-shop .content,
+.edit-shopInfo .content {
   position: relative;
 }
-.edit-shop li {
+.edit-shop li,
+.edit-shopInfo li {
   line-height: 40px;
 }
-.edit-shop .edit-l {
+.edit-shop .edit-l,
+.edit-shopInfo .edit-l {
   float: left;
   width: 500px;
   padding-right: 25px;
 }
-.edit-shop .edit-r {
+.edit-shop .edit-r,
+.edit-shopInfo .edit-r {
   float: right;
   width: 500px;
   padding-left: 25px;
 }
-.edit-shop .edit {
+.edit-shop .edit,
+.edit-shopInfo .edit,
+.edit-shop .editShopInfo,
+.edit-shopInfo .editShopInfo {
   position: absolute;
   top: -20px;
   right: 0;
@@ -159,11 +176,51 @@ header a {
   line-height: 50px;
   background: #f29d17 url("../images/edit.png") no-repeat 20px 16px;
 }
-.edit-shop .edit a {
+.edit-shop .edit a,
+.edit-shopInfo .edit a,
+.edit-shop .editShopInfo a,
+.edit-shopInfo .editShopInfo a {
   display: block;
   width: 100%;
   height: 100%;
   padding-left: 50px;
+}
+#edit-shop input {
+  height: 25px;
+}
+#edit-shop #shopName {
+  width: 325px;
+}
+#edit-shop select {
+  width: 69px;
+  height: 25px;
+}
+#edit-shop .address {
+  position: relative;
+}
+#edit-shop #detailAddress {
+  position: absolute;
+  bottom: -75px;
+  right: 50px;
+  width: 200px;
+  height: 65px;
+}
+#edit-shop #floor,
+#edit-shop #houseNum {
+  width: 76px;
+}
+#edit-shop #tel {
+  width: 180px;
+}
+#edit-shop #nature {
+  width: 112px;
+  height: 25px;
+}
+#edit-shop .content {
+  position: relative;
+}
+#edit-shop #submitShopInfo {
+  background-image: url("../images/submit.png");
 }
 .exhibition {
   overflow: hidden;
@@ -191,10 +248,12 @@ header a {
   float: right;
   font-size: 18px;
   overflow: hidden;
+  position: relative;
 }
 .exhibition .main .nav li {
   float: left;
   color: #aaa;
+  cursor: pointer;
 }
 .exhibition .main .nav li span {
   padding: 0 6px;
@@ -205,7 +264,11 @@ header a {
 .exhibition .main a:hover {
   color: #d04424;
 }
+.exhibition .show #goodsListBox {
+  overflow: hidden;
+}
 .exhibition .show .item {
+  position: relative;
   float: left;
   width: 226px;
   height: 320px;
@@ -214,9 +277,53 @@ header a {
   margin-bottom: 50px;
   background-color: white;
   box-shadow: 0 0 35px #eae9e9;
+  overflow: hidden;
 }
 .exhibition .show .item:nth-child(4n) {
   margin-right: 0;
+}
+.exhibition .show .operate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  padding: 84px 34px 0;
+}
+.exhibition .show .operate a {
+  display: block;
+  color: #fff;
+}
+.exhibition .show .operate .goodsDetail {
+  width: 100%;
+  margin-bottom: 36px;
+}
+.exhibition .show .operate .goodsDetail:hover {
+  color: #d04424;
+}
+.exhibition .show .operate .editGoods,
+.exhibition .show .operate .deleGoods {
+  float: left;
+  width: 58px;
+  height: 58px;
+  line-height: 58px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+}
+.exhibition .show .operate .editGoods:hover,
+.exhibition .show .operate .deleGoods:hover {
+  font-size: 20px;
+}
+.exhibition .show .operate .deleGoods {
+  float: right;
+  color: #fff;
+  background-color: #d04424;
 }
 .exhibition .pic {
   width: 100%;
@@ -251,9 +358,12 @@ header a {
   height: 35px;
   border: 1px solid #d04424;
   text-align: center;
-  color: #d04424;
   font-size: 18px;
   padding-top: 5px;
+}
+.exhibition .page .prev a,
+.exhibition .page .next a {
+  color: #d04424;
 }
 .exhibition .page .prev {
   margin-right: 20px;
@@ -275,15 +385,24 @@ header a {
   color: #999;
   text-align: center;
   padding-top: 5px;
+  cursor: pointer;
 }
 .exhibition .page .pageNum li:nth-child(4) {
   border: 0;
 }
+.exhibition .page .pageNum li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .exhibition .page .pageNum li.active,
 .exhibition .page .pageNum li:hover {
   background-color: #d04424;
-  color: #fff;
   border: 0;
+}
+.exhibition .page .pageNum li.active a,
+.exhibition .page .pageNum li:hover a {
+  color: #fff;
 }
 .title {
   position: relative;

@@ -12,82 +12,98 @@
         .exhibition .main a.active {
             color: #d04424;
         }
+        #detail .info-detail span {
+             border: 0;
+        }
     </style>
 </head>
 
 <body>
-    <!-- 顶部 -->
+<!-- 顶部 -->
+<div class="container">
+    <header>
+        <img src="./images/red-logo.png" alt="">
+        <a class="logout" href="javascript:;">退出登录</a>
+    </header>
+</div>
+<!-- 导航 -->
+<div class="navbar">
     <div class="container">
-        <header>
-            <img src="./images/red-logo.png" alt="">
-            <a href="#">退出登录</a>
-        </header>
+        <ul>
+            <li>
+                <a href="./myShop.html">我的店铺</a>
+            </li>
+            <li>
+                <a class="active" href="./myGoods.html">我的宝贝</a>
+            </li>
+        </ul>
     </div>
-    <!-- 导航 -->
-    <div class="navbar">
-        <div class="container">
-            <ul>
-                <li>
-                    <a href="#">我的店铺</a>
-                </li>
-                <li>
-                    <a class="active" href="#">我的宝贝</a>
-                </li>
-            </ul>
+</div>
+
+<div class="container">
+    <!-- 宝贝详情 -->
+    <div id="detail">
+
+    </div>
+    <!-- 底部 -->
+    <div class="footer">
+        <p>杭州缘之宝网络科技有限公司 版权所有</p>
+        <ul>
+            <li>
+                <a href="#">寻宝图手机版</a> |
+                <a href="#">官方网站</a> |
+                <a href="#">服务协议</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/template" id="goodDetail">
+    <div class="gallery">
+        <div class="main-pic">
+            <img src="{{goodsFile.url}}" alt=""></a>
+        </div>
+        <ul class="site-pic">
+            <li><img src="{{goodsFile.url}}" alt=""></li>
+            {{each rooFileList}}
+            <li><img src="{{$value.url}}" alt=""></li>
+            <!--<li><img src="./images/site.png" alt=""></li>-->
+            <!--<li><img src="./images/site.png" alt=""></li>-->
+            <!--<li><img src="./images/site.png" alt=""></li>-->
+            <!--<li><img src="./images/site.png" alt=""></li>-->
+            <!--<li><img src="./images/site.png" alt=""></li>-->
+            <!--<li><img src="./images/site.png" alt=""></li>-->
+            {{/each}}
+        </ul>
+    </div>
+    <div class="info">
+        <h1 class="title">{{goodsName}}
+            <span class="sort">{{goodsSort}}</span>
+        </h1>
+        <ul class="info-detail">
+            <li>市场参考价：<span class="price">¥<em>{{goodsMarketprice}}</em> 元</span></li>
+            <li>类型：{{tag.tagName}}</li>
+            <li>材质：{{material}}</li>
+            <li>尺寸：{{size}}</li>
+            <li>重量：{{weight}}</li>
+            <li>宝贝介绍：{{remark}}</li>
+        </ul>
+        <div class="oprate">
+            <div class="del" data-goodId="{{id}}">删除宝贝</div>
+            <div class="edit"><a href="goodsEdit.html?goodsId={{id}}">编辑宝贝</a></div>
         </div>
     </div>
-
-    <div class="container">
-        <!-- 宝贝详情 -->
-        <div id="detail">
-            <div class="gallery">
-                <div class="main-pic">
-                    <img src="./images/detail-main-pic.png" alt=""></a>
-                </div>
-                <ul class="site-pic">
-                    <li><img src="./images/site.png" alt=""></li>
-                    <li><img src="./images/site.png" alt=""></li>
-                    <li><img src="./images/site.png" alt=""></li>
-                    <li><img src="./images/site.png" alt=""></li>
-                    <li><img src="./images/site.png" alt=""></li>
-                    <li><img src="./images/site.png" alt=""></li>
-                    <li><img src="./images/site.png" alt=""></li>
-                </ul>
-            </div>
-            <div class="info">
-                <h1 class="title">天然冰糯种翡翠福在眼前吊坠 正品a货如意葫芦挂 件玉器带证书
-                    <span class="sort">精品区</span>
-                </h1>
-                <ul class="info-detail">
-                    <li>市场参考价：<span class="price">¥<em>12000</em> 元</span></li>
-                    <li>类型：珠宝 玉器</li>
-                    <li>材质：翡翠</li>
-                    <li>尺寸：4*2*0.5（厘米） </li>
-                    <li>重量：50（克）</li>
-                    <li>宝贝介绍：天然冰糯种翡翠福在眼前吊坠 正品a货如意葫芦挂件玉 器带证书天然冰糯种翡翠福在眼前吊坠 正品a货如意葫</li>
-                </ul>
-                <div class="oprate">
-                    <div class="del">删除宝贝</div>
-                    <div class="edit">编辑宝贝</div>
-                </div>
-            </div>
-        </div>
-        <!-- 底部 -->
-        <div class="footer">
-            <p>杭州缘之宝网络科技有限公司 版权所有</p>
-            <ul>
-                <li>
-                    <a href="#">寻宝图手机版</a> |
-                    <a href="#">官方网站</a> |
-                    <a href="#">服务协议</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+</script>
 
 
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/banner.js"></script>
+<!--全局-->
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery.cookie.js"></script>
+<script src="./js/template-web.js"></script>
+<script src="./js/logout.js"></script>
+
+<!--本页面-->
+<script src="./js/goodsDetail.js"></script>
 </body>
 
 </html>

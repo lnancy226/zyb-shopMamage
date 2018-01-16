@@ -1,6 +1,10 @@
 @import "setting";
 @import "common";
 
+input,select,textarea {
+  border: 1px solid #aaa;
+}
+
 // 宝贝详情
 #detail {
   margin-top: 30px;
@@ -15,6 +19,7 @@
     position: relative;
     img {
       width: 400px;
+      height: 300px;
     }
 
     #uploadMinImg {
@@ -39,16 +44,32 @@
     li {
       position: relative;
       float: left;
-      margin-right: 13px;
+      margin-right: 11px;
       margin-bottom: 20px;
+      cursor: pointer;
 
       &:nth-child(4n) {
         margin-right: 0;
       }
+
+      &:nth-child(1) {
+        position: relative;
+      }
+    }
+
+    .instrc {
+      position: absolute;
+      bottom: 5px;
+      width: 100%;
+      text-align: center;
+      font-size: 18px;
+      color: #fff;
+      background-color: rgba(0,0,0,.3);
     }
 
     img {
       width: 90px;
+      height: 90px;
     }
 
     .dele {
@@ -91,6 +112,10 @@
       font-size: 26px;
       color: #333;
       line-height: 45px;
+    }
+
+    #sort {
+      width: 138px;
     }
 
     .sort {
@@ -160,10 +185,6 @@
     .price {
       color: #c64426;
     }
-
-    span {
-      border: 1px solid #666;
-    }
   }
 
   .oprate {
@@ -187,5 +208,6 @@
   .edit {
     background-color: #f29d17;
     margin-left: 40px;
+    border: 0;
   }
 }

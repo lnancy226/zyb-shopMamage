@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>编辑宝贝</title>
+    <link rel="stylesheet" href="./css/goodsDetail.css">
+
+    <style>
+        .exhibition .main a.active {
+            color: #d04424;
+        }
+    </style>
+</head>
+
+<body>
+<!-- 顶部 -->
+<div class="container">
+    <header>
+        <img src="./images/red-logo.png" alt="">
+        <a href="#">退出登录</a>
+    </header>
+</div>
+<!-- 导航 -->
+<div class="navbar">
+    <div class="container">
+        <ul>
+            <li>
+                <a href="#">我的店铺</a>
+            </li>
+            <li>
+                <a class="active" href="#">我的宝贝</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <!-- 宝贝详情 -->
+    <div id="detail">
+        <div class="gallery">
+            <div class="main-pic">
+                <img src="./images/detail-main-pic.png" alt=""></a>
+            </div>
+            <div class="site-pic">
+                <ul>
+                    <li>
+                        <img src="./images/site.png" alt="">
+                        <div class="dele">×</div>
+                    </li>
+                    <li>
+                        <img src="./images/site.png" alt="">
+                        <div class="dele">×</div>
+                    </li>
+                    <li>
+                        <img src="./images/site.png" alt="">
+                        <div class="dele">×</div>
+                    </li>
+                    <li>
+                        <img src="./images/site.png" alt="">
+                        <div class="dele">×</div>
+                    </li>
+                    <li>
+                        <img src="./images/site.png" alt="">
+                        <div class="dele">×</div>
+                    </li>
+                    <li>
+                        <img src="./images/site.png" alt="">
+                        <div class="dele">×</div>
+                    </li>
+                    <li>
+                        <img src="./images/site.png" alt="">
+                        <div class="dele">×</div>
+                    </li>
+                </ul>
+                <div class="upload">
+                    <form action="">
+                        <img onclick="getElementById('file').click()" style="cursor:pointer;" title="点击添加图片"
+                             alt="点击添加图片" src="./images/addsite.png">
+                        <!--用来替换按钮的图片
+                        -->
+                        <input type="file" multiple="multiple" id="file" name='file'
+                               style="height:0;width:0;z-index: -1;  position: absolute;left: 10px;top: 5px;"/>
+                        <!--原来按钮的样式-->
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+        <div class=" info ">
+            <form action=" ">
+                <div class="form-group">
+                    <label>宝贝名称：</label>
+                    <input class="input" id="goodsName" type="text" onkeydown="this.onkeyup();"
+                           onkeyup="this.size=(this.value.length)" size="4">
+                </div>
+                <div class="form-group">
+                    <select class="sel" name="sort" id="sort">精品区
+                        <option value="0">精品区</option>
+                        <option value="0">特价区</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="price">市场参考价：</label>
+                    <input class="input" id="price" type="text" onkeydown="this.onkeyup();"
+                           onkeyup="this.size=(this.value.length)" size="4">
+                    <select name="unitPrice" id="unitPrice">元
+                        <option value="0">元</option>
+                        <option value="0">万元</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>类型：</label>
+                    <select name="type" id="type1">珠宝
+                        <option value="0">珠宝</option>
+                    </select>
+                    <select name="type" id="type1">玉器
+                        <option value="0">玉器</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="material">材质：</label>
+                    <input class="input" id="material" type="text" onkeydown="this.onkeyup();"
+                           onkeyup="this.size=(this.value.length)" size="4">
+                </div>
+                <div class="form-group">
+                    <label for="size1">尺寸：</label>
+                    <input class="input" id="size1" type="text" onkeydown="this.onkeyup();"
+                           onkeyup="this.size=(this.value.length)" size="4"> *
+                    <input class="input" id="size2" type="text" onkeydown="this.onkeyup();"
+                           onkeyup="this.size=(this.value.length)" size="4"> *
+                    <input class="input" id="size3" type="text" onkeydown="this.onkeyup();"
+                           onkeyup="this.size=(this.value.length)" size="4">
+                    <select name="unitSize" id="unitSize">厘米
+                        <option value="0">厘米</option>
+                        <option value="0">米</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="weight">重量：</label>
+                    <input class="input" id="weight" type="text" onkeydown="this.onkeyup();"
+                           onkeyup="this.size=(this.value.length)" size="4">
+                    <select name="unitWeight" id="unitWeight">克
+                        <option value="0">克</option>
+                        <option value="0">千克</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="instr">宝贝介绍：</label>
+                    <textarea name="" id="instr" cols="30" rows="5"></textarea>
+                </div>
+            </form>
+            <div class="oprate ">
+                <div class="del" id="cancel">取消编辑</div>
+                <div class="edit" id="submit">提交</div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <div class="footer ">
+        <p>杭州缘之宝网络科技有限公司 版权所有</p>
+        <ul>
+            <li>
+                <a href="# ">寻宝图手机版</a> |
+                <a href="# ">官方网站</a> |
+                <a href="# ">服务协议</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--宝贝详情展示模板-->
+<!--<div class="gallery">-->
+<!--<div class="main-pic">-->
+<!--<img id="mainPic" src="./images/main-bg.png" alt=""></a>-->
+<!--<div id="uploadMinImg" onclick="getElementById('mainImg').click()" style="cursor:pointer;">点击上传</div>-->
+<!--<input type="file" id="mainImg" style="height:0;width:0;z-index: -1;  position: absolute;left: 10px;top: 5px;">-->
+<!--</div>-->
+<!--<div class="site-pic">-->
+<!--<ul>-->
+<!--<li class="hide">-->
+<!--<img id="mainPicBanner" src="./images/site.png" alt="">-->
+<!--&lt;!&ndash;<div class="dele">×</div>&ndash;&gt;-->
+<!--<div class="instrc">主图</div>-->
+<!--</li>-->
+<!--</ul>-->
+<!--<div class="upload hide">-->
+<!--<form action="">-->
+<!--<img onclick="getElementById('file').click()" style="cursor:pointer;" title="点击添加图片" alt="点击添加图片" src="./images/addsite.png">-->
+<!--&lt;!&ndash;用来替换按钮的图片-->
+<!--&ndash;&gt;-->
+<!--<input type="file" multiple="multiple" id="file" name='file' style="height:0;width:0;z-index: -1;  position: absolute;left: 10px;top: 5px;" />-->
+<!--&lt;!&ndash;原来按钮的样式&ndash;&gt;-->
+<!--</form>-->
+<!--</div>-->
+<!--</div>-->
+
+
+<!--</div>-->
+<!--<div class=" info ">-->
+<!--<form action=" " id="form">-->
+<!--<div class="form-group">-->
+<!--<label>宝贝名称：</label>-->
+<!--<input class="input" name="goodsName" id="goodsName" type="text" this.size=(this.value.length) >-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<select class="sel" name="sort" id="sort">精品区-->
+<!--<option value="0">精品区</option>-->
+<!--<option value="0">特价区</option>-->
+<!--</select>-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<label for="price">市场参考价：</label>-->
+<!--<input class="input" name="goodsMarketprice" id="price" type="text" size="4">-->
+<!--<select name="unitPrice" id="unitPrice">元-->
+<!--<option>元</option>-->
+<!--<option>万元</option>-->
+<!--</select>-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<label>类型：</label>-->
+<!--<select name="firstTag" id="firstTag">请选择-->
+<!--<option value="0">请选择</option>-->
+<!--</select>-->
+<!--<select name="secondTag" id="secondTag">请选择-->
+<!--<option value="0">请选择</option>-->
+<!--</select>-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<label for="material">材质：</label>-->
+<!--<input class="input" name="material" id="material" type="text" size="4">-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<label for="size1">尺寸：</label>-->
+<!--<input class="input" name="size" id="size1" type="text" size="4"> *-->
+<!--<input class="input" name="size" id="size2" type="text" size="4"> *-->
+<!--<input class="input" name="size" id="size3" type="text" size="4">-->
+<!--<select name="unitSize" id="unitSize">厘米-->
+<!--<option value="0">厘米</option>-->
+<!--<option value="1">米</option>-->
+<!--</select>-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<label for="weight">重量：</label>-->
+<!--<input class="input" name="weight" id="weight" type="text" size="4">-->
+<!--<select name="unitWeight" id="unitWeight">克-->
+<!--<option>克</option>-->
+<!--<option>千克</option>-->
+<!--</select>-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<label for="instr">宝贝介绍：</label>-->
+<!--<textarea name="remark"  id="instr" cols="30" rows="5"></textarea>-->
+<!--</div>-->
+<!--</form>-->
+<!--<div class="oprate ">-->
+<!--<div class="del" id="reset">重置</div>-->
+<!--<div class="edit" id="submit">提交</div>-->
+<!--</div>-->
+
+<!--</div>-->
+
+<!--全局-->
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery.cookie.js"></script>
+<script src="./js/template-web.js"></script>
+<script src="./js/logout.js"></script>
+<!--本页面-->
+<script src="./js/goodsAdd.js"></script>
+
+<script>
+    //        $(function() {
+    //            $("#goodsName").val("天然冰糯种翡翠福在眼前吊坠 正品a货如意葫芦挂 件玉器带证书");
+    //            $("#price").val("12000");
+    //            $("#material").val("翡翠");
+    //            $("#size1").val("4");
+    //            $("#size2").val("2");
+    //            $("#size3").val("0.5");
+    //            $("#weight").val("50");
+    //            $("#instr").val("天然冰糯种翡翠福在眼前吊坠 正品a货如意葫芦挂件玉 器带证书天然冰糯种翡翠福在眼前吊坠 正品a货如意葫");
+    //        })
+
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)return unescape(r[2]);
+        return null;
+    };
+    var goodId = GetQueryString("goodsId");
+
+    //    编辑宝贝
+    $("#detail").on('click', ".oprate .edit", function () {
+        var id = $(this).attr("data-goodId");
+        $.ajax({
+            url: "http://120.27.226.156:8080/roo-mobile-web/goods/" + id,
+            beforeSend: function (request) {
+                request.setRequestHeader("Authorization", Authorization);
+            },
+            // data: parameter,
+            type: "DELETE",
+            contentType: "application/json;charset=utf-8",
+            success: function (info) {
+                console.log(info, "删除");
+                if (info.httpCode == 200) {
+                    window.location.href = "./myGoods.html";
+                    alert("删除成功！");
+                }
+            }
+        });
+    })
+
+</script>
+</body>
+
+</html>
